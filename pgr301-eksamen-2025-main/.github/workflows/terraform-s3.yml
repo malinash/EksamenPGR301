@@ -1,0 +1,54 @@
+name: Terraform S3 Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "infra-s3/**"
+      - ".github/workflows/terraform-s3.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "infra-s3/**"
+      - ".github/workflows/terraform-s3.yml"
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: eu-west-1
+      CANDIDATE_ID: ${{ secrets.CANDIDATE_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.0
+
+      - name: Terraform fmt
+        working-directory: infra-s3
+        run: terraform fmt -check
+
+      - name: Terraform init
+        working-directory: infra-s3
+        run: terraform init
+
+      - name: Terraform validate
+        working-directory: infra-s3
+        run: terraform validate
+
+      - name: Terraform plan on PRs
+        if: github.event_name == 'pull_request'
+        working-directory: infra-s3
+        run: terraform plan -var="candidate_id=${{ env.CANDIDATE_ID }}"
+
+      - name: Terraform apply on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        working-directory: infra-s3
+        run: terraform apply -auto-approve -var="candidate_id=${{ env.CANDIDATE_ID }}"
