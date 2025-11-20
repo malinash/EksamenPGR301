@@ -7,11 +7,13 @@ Globals:
     Timeout: 30
     MemorySize: 256
     Runtime: python3.11
+  Api:
+    EndpointConfiguration: REGIONAL
 
 Parameters:
   S3BucketName:
     Type: String
-    Default: pgr301-sentiment-data
+    Default: kandidat-70-data
     Description: S3 bucket for storing sentiment analysis results
 
 Resources:
