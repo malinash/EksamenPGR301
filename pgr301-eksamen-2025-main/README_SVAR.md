@@ -1,3 +1,8 @@
+## Oppgave 1 – AWS Lambda, SAM og GitHub Actions
+Jeg har opprettet en egen mappe `infra-s3/` der all Terraform-kode ligger. Terraform-konfigurasjonen oppretter en S3-bucket for analyseresultater med navnet kandidat-70-data.
+Jeg har laget en lifecycle-policy som gjelder for filer under prefix midlertidig/, der filer flyttes til Glacier etter 7 dager og slettes etter 30 dager. Filer utenfor dette området påvirkes ikke. Alle verdier som navn, region og tidsgrenser er variabler for å unngå hardkoding.
+
+
 ## Oppgave 2 – AWS Lambda, SAM og GitHub Actions
 
 ### Del A – Deploy og test av SAM-applikasjonen
