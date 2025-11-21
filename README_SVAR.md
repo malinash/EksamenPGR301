@@ -89,9 +89,21 @@ AWS_SECRET_ACCESS_KEY
 
 CANDIDATE_ID
 
+## Oppgave 3 – Container og Docker
 
+### Del A
+Jeg containeriserte Spring Boot-applikasjonen ved å lage en Dockerfile med multi-stage build (Maven + Java 21 for bygging og Amazon Corretto 21 Alpine for runtime). Containeren ble kjørt med nødvendige AWS-miljøvariabler og eksponerte port 8080.
+Ble testet med POST-req til /api/analyze, og returnerte korrekt AI-basert sentimentanalyse fra AWS Bedrock.
 
+### Del B
+Jeg valgte å bruke to tags for Docker-imaget:
 
+- `latest` – peker alltid på siste vellykkede build fra `main`. Dette gjør det enkelt å bruke imaget i f.eks. test- og demo-miljøer uten å måtte oppdatere tag hver gang.
+- `sha-<commit>` (`sha-${GIT_SHA}`) – en unik tag per commit. Denne gjør det mulig å spore nøyaktig hvilken kodeversjon et image er bygget fra, og gjør rollback og debugging enklere hvis noe går galt i et senere deploy.
 
+Kombinasjonen av `latest` + `sha-commit` gir både enkel bruk og god sporbarhet.
 
-  
+For at `.github/workflows/docker-build.yml` skal fungere i en fork, må sensor:
+Legge inn secrets:
+  - `DOCKER_USERNAME` = Docker Hub-brukernavn
+   - `DOCKER_TOKEN` = Docker Hub access token
