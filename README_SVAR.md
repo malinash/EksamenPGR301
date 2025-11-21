@@ -155,3 +155,24 @@ Måler fordelingen av confidence-scorer (0–1) for sentimentanalysene. Dette gi
 ![Subscription confirmed](media/subscription_confirmed.png)
 ![Alarm Mail 2](media/alarm_mail_2.png)
 
+
+## Oppgave 5 – KI-assistert Systemutvikling og DevOps-prinsipper
+
+Kunstig intelligens har på kort tid blitt et viktig verktøy i programvareutvikling. Verktøy som ChatGPT, GitHub Copilot og Claude kan generere kode, foreslå løsninger, skrive tester og hjelpe med feilsøking.Dette påvirker ikke bare hvordan programvare bygges, men også hvordan utviklingsprosessen fungerer i en DevOps-kontekst. DevOps er basert på prinsippene flyt, feedback og kontinuerlig læring og forbedring. I denne drøftingen vurderes hvordan KI-assistert utvikling både kan styrke og utfordre disse prinsippene, med utgangspunkt i egne erfaringer fra arbeid med AWS, Terraform og observabilitet.
+
+Et hovedmål i DevOps er rask og stabil levering av verdi fra idé til produksjon. KI-verktøy kan bidra betydelig til økt hastighet i utviklingsprosessen. For eksempel kan en utvikler bruke KI til å generere utkast til Terraform-konfigurasjoner, Java-klasser eller Spring Boot-konfigurasjon på sekunder, noe som normalt ville tatt mye lengre tid.
+Samtidig kan KI også skape nye flaskehalser. Generert kode må alltid kontrolleres manuelt, og hvis man ikke forstår koden godt nok selv, kan det ta lang tid å validere at den faktisk fungerer og følger prosjektets arkitektur. I verste fall kan utvikleren bli avhengig av KI på en måte som senker tempoet når verktøyet gir feil eller misvisende forslag. Dette kan føre til flere iterasjoner før man kommer frem til en fungerende løsning som kan dermed skape en lenger utviklingsprosess i lengden. 
+Når det gjelder code review og deployment, kan KI-generert kode føre til større mengder kode som må gjennomgås, noe som potensielt kan bremse prosessen. På den positive siden kan KI også foreslå alternative eller mer effektive løsninger, som kan forbedre kvaliteten på koden før deploy.
+
+Rask og tydelig feedback er avgjørende i DevOps. Når KI er involvert i kodeproduksjonen, øker behovet for gode feedback-mekanismer. Automatisert testing, overvåkning og metrikker blir enda viktigere for å oppdage feil i tid. I denne eksamenen brukte jeg CloudWatch-metrikker og alarmer for å overvåke responstid og antall analyser. Dette kan sees som en del av en feedback loop som raskt avslører om noe fungerer eller ikke, uavhengig av om koden er skrevet av menneske eller KI.
+En utfordring er at KI kan generere kode som ser riktig ut, men som inneholder skjulte feil eller sikkerhetssårbarheter. Derfor er det viktig med tidlig tilbakemelding gjennom enhetstester, integrasjonstester og overvåkningsverktøy. Uten dette kan feil bli oppdaget først i produksjon, noe som bryter med DevOps-prinsippet om tidlig feedback.
+Samtidig kan KI også brukes positivt i feedback-prosessen. For eksempel kan KI analysere logger, testresultater eller metrikker og komme med forslag til forbedringer. Dermed kan KI bidra til raskere læring og justering i utviklingsløpet.
+
+Kontinuerlig læring og forbedring er viktig i DevOps-kultur. KI-assistenter kan være et effektivt læringsverktøy, spesielt for studenter og juniorutviklere. Når jeg jobbet med Terraform og CloudWatch, kunne jeg stille konkrete spørsmål og få forklaringer på konsepter jeg ikke fullt ut forstod. Dette bidrar til raskere kompetanseutvikling.
+På den andre siden finnes det en risiko for at utviklere blir for avhengige av KI og slutter å tenke selv. Hvis man alltid ber KI om å løse problemer, mister man gradvis evnen til å analysere og løse dem selv. Over tid kan dette føre til en redusert helhetsforståelse. Derfor må KI brukes som et støtteverktøy og ikke en erstatning for egen kompetanse.
+Organisasjoner må også tilpasse måten de deler kunnskap på. Når kode ofte genereres av KI, blir det ekstra viktig å dokumentere hvorfor løsninger er valgt, og hva som faktisk skjer i systemet. Nye ferdigheter blir også viktige: å kunne skrive gode prompts, evaluere KI-generert kode kritisk, og kombinere menneskelig dømmekraft med KI sine raske forslag.
+
+KI-assistert utvikling har stort potensial til å forbedre flyt, styrke feedback og støtte kontinuerlig læring i DevOps. Samtidig introduserer det nye risikoer knyttet til kodekvalitet, avhengighet og manglende forståelse. Etter min mening så bør KI brukes som et godt støtteverktøy, men i kombinasjon med menneskelig innsikt. Dette innebærer kritisk tenkning og gode DevOps praksiser som testing, overvåkning og samarbeid. Brukt riktig kan KI bli en viktig del av fremtidens DevOps miljø. På den andre siden, brukt feil så kan det svekke både kvalitet og kompetanse.
+
+
+
