@@ -58,6 +58,22 @@ Jeg testet med Postman ved å sende POST-req:
 Outputtet viste riktig sentimentanalyse fra Amazon Comprehend.
 
 ### Del B – Fiks GitHub Actions Workflow
+Jeg har endret workflowen slik at den følger god DevOps praksis:
+
+- På Pull Request kjøres kun:
+  - `sam validate`
+  - `sam build`
+- På push til main kjøres:
+  - `sam validate`
+  - `sam build`
+  - `sam deploy`
+
+Hardkodede verdier er erstattet med kandidatnummer (70) og GitHub Secrets brukes for AWS-nøkler.
+
+Workflow: `.github/workflows/sam-deploy.yml`
+https://github.com/malinash/EksamenPGR301/blob/main/pgr301-eksamen-2025-main/.github/workflows/sam-deploy.yml
+
+
 
 
   
