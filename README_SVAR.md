@@ -133,11 +133,25 @@ Viser antall selskaper funnet i siste analyse. Gauge er valgt fordi verdien kan 
 DistributionSummary – sentiment.confidence.distribution
 Måler fordelingen av confidence-scorer (0–1) for sentimentanalysene. Dette gir innsikt i hvor sikker modellen er over tid.
 
-## Cloudwatch - Counter + DistributionSummary
+### Cloudwatch - Counter + DistributionSummary
 ![Counter og Distribution](media/cloudwatch_counter_distribution.png)
 
-## Cloudwatch - Timer
+### Cloudwatch - Timer
 ![Timer](media/cloudwatch_timer.png)
 
-## Cloudwatch - Gauge
+### Cloudwatch - Gauge
 ![Gauge](media/cloudwatch_gauge.png)
+
+
+### Del B
+
+### Dashboard Cloudwatch
+
+### Alarm i konsoll
+![Alarm](media/cloudwatch_alarm.png)
+
+### Epost 
+![Alarm Mail 1](media/alarm_mail_1.png)
+![Subscription confirmed](media/subscription_confirmed.png)
+![Alarm Mail 2](media/alarm_mail_2.png)
+
