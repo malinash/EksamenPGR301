@@ -1,0 +1,10 @@
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/SentimentDockerApplication.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/service/S3StorageService.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/model/CompanySentiment.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/controller/SentimentController.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/service/BedrockService.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/model/SentimentResult.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/config/AwsConfig.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/config/MetricsConfig.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/model/AnalysisRequest.java
+/workspaces/EksamenPGR301/sentiment-docker/src/main/java/com/aialpha/sentiment/metrics/SentimentMetrics.java

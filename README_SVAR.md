@@ -113,3 +113,31 @@ Legge inn secrets:
 
 Workflowen vil da automatisk pushe til:
 <DOCKER_USERNAME>/sentiment-docker:latest
+
+## Oppgave 4 – Observabilitet, Metrikksamling og Overvåkningsinfrastruktur
+
+### Del A
+Jeg har implementert egendefinerte metrikker i applikasjonen ved hjelp av Micrometer og eksportert disse til Amazon CloudWatch under namespace kandidat70.
+
+Følgende metrikker er implementert:
+
+Counter – sentiment.analysis.total
+Teller totalt antall sentimentanalyser per selskap og sentiment-type. Counter er valgt fordi verdien kun skal øke.
+
+Timer – sentiment.analysis.duration
+Måler varigheten på en sentimentanalyse. Timer er valgt for å analysere ytelse, responstid og maks-/gjennomsnittsverdier.
+
+Gauge – sentiment.companies.detected.last
+Viser antall selskaper funnet i siste analyse. Gauge er valgt fordi verdien kan gå både opp og ned mellom hver kjøring.
+
+DistributionSummary – sentiment.confidence.distribution
+Måler fordelingen av confidence-scorer (0–1) for sentimentanalysene. Dette gir innsikt i hvor sikker modellen er over tid.
+
+Counter + DistributionSummary
+<media/cloudwatch_counter_distribution.png>
+
+Timer
+<media/cloudwatch_timer.png>
+
+Gauge
+<media/cloudwatch_gauge.png>

@@ -1,0 +1,11 @@
+com/aialpha/sentiment/config/MetricsConfig$1.class
+com/aialpha/sentiment/service/BedrockService.class
+com/aialpha/sentiment/SentimentDockerApplication.class
+com/aialpha/sentiment/config/MetricsConfig.class
+com/aialpha/sentiment/config/AwsConfig.class
+com/aialpha/sentiment/model/CompanySentiment.class
+com/aialpha/sentiment/service/S3StorageService.class
+com/aialpha/sentiment/metrics/SentimentMetrics.class
+com/aialpha/sentiment/model/SentimentResult.class
+com/aialpha/sentiment/controller/SentimentController.class
+com/aialpha/sentiment/model/AnalysisRequest.class
