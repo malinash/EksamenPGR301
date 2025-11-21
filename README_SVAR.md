@@ -96,6 +96,9 @@ Jeg containeriserte Spring Boot-applikasjonen ved å lage en Dockerfile med mult
 Ble testet med POST-req til /api/analyze, og returnerte korrekt AI-basert sentimentanalyse fra AWS Bedrock.
 
 ### Del B
+Workflow fil:
+https://github.com/malinash/EksamenPGR301/actions/runs/19561732129
+
 Jeg valgte å bruke to tags for Docker-imaget:
 
 - `latest` – peker alltid på siste vellykkede build fra `main`. Dette gjør det enkelt å bruke imaget i f.eks. test- og demo-miljøer uten å måtte oppdatere tag hver gang.
@@ -107,3 +110,6 @@ For at `.github/workflows/docker-build.yml` skal fungere i en fork, må sensor:
 Legge inn secrets:
   - `DOCKER_USERNAME` = Docker Hub-brukernavn
    - `DOCKER_TOKEN` = Docker Hub access token
+
+Workflowen vil da automatisk pushe til:
+<DOCKER_USERNAME>/sentiment-docker:latest
