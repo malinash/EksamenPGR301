@@ -73,6 +73,10 @@ Hardkodede verdier er erstattet med kandidatnummer (70) og GitHub Secrets brukes
 Workflow: `.github/workflows/sam-deploy.yml`
 https://github.com/malinash/EksamenPGR301/blob/main/pgr301-eksamen-2025-main/.github/workflows/sam-deploy.yml
 
+https://github.com/malinash/EksamenPGR301/pull/new/test-sam-pr
+
+
+
 
 
 
