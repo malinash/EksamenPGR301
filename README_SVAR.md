@@ -84,7 +84,9 @@ https://github.com/malinash/EksamenPGR301/pull/2
 For at workflowen skal kjøre i sensor sitt repo må følgende secrets legges til:
 
 AWS_ACCESS_KEY_ID
+
 AWS_SECRET_ACCESS_KEY
+
 CANDIDATE_ID
 
 
