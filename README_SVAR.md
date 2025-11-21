@@ -70,10 +70,22 @@ Jeg har endret workflowen slik at den følger god DevOps praksis:
 
 Hardkodede verdier er erstattet med kandidatnummer (70) og GitHub Secrets brukes for AWS-nøkler.
 
-Workflow: `.github/workflows/sam-deploy.yml`
-https://github.com/malinash/EksamenPGR301/blob/main/pgr301-eksamen-2025-main/.github/workflows/sam-deploy.yml
+Jeg oppdaget at GitHub Actions brukte Python 3.9, mens Lambda var satt til python3.11. Dette førte til feil under sam build. Jeg løste dette ved å oppdatere workflowen til å bruke Python 3.11, som gjorde at byggingen fungerte korrekt.
 
-https://github.com/malinash/EksamenPGR301/pull/new/test-sam-pr
+Workflow-fil:
+https://github.com/malinash/EksamenPGR301/blob/main/.github/workflows/sam-deploy.yml
+
+Vellykket deploy (push til main):
+https://github.com/malinash/EksamenPGR301/actions/runs/19558456996
+
+PR-validering (uten deploy):
+https://github.com/malinash/EksamenPGR301/pull/2
+
+For at workflowen skal kjøre i sensor sitt repo må følgende secrets legges til:
+
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+CANDIDATE_ID
 
 
 
